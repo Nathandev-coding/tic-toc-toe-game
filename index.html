@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tic toc toe game</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<style>
+    .player{
+        border: 2px solid #17122a;
+    }
+    .player:hover{
+        border: 2px solid #2a2343;
+        opacity: 1;
+    }
+    #header .player-active{
+        opacity: 1;
+        border: solid 4px #2a2343;
+        align-items: center;
+    }
+     #xPlayDisplay{
+        color: #1892ea;
+        opacity: 0.5;
+
+    }
+    #oPlayDisplay{
+        color: #a737ff;
+        opacity: 0.5;
+
+    }
+    #info{
+        display: block;
+    }
+    #board{
+       display: grid;
+       grid-template-columns: repeat(3,80px);
+       grid-template-rows: repeat(3,80px);
+       width: 100%;
+       gap: 10px;
+       
+    }
+    .cell{
+        border: 2px solid #2a2343;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 36px;
+        transition:  0.3s background;
+
+    }
+    .cell:hover{
+        background-color: #2a2343;
+    }
+
+    #restartbtn{
+        background-color: #17122a;
+        font-weight: bold;
+        transition: 0.3s;
+        visibility: hidden;
+    }
+    #restartbtn:hover{
+        background-color: #2a2343;
+    }
+    @media (max-width:380px) {
+        #board{
+       display: grid;
+       grid-template-columns: repeat(3,60px);
+       grid-template-rows: repeat(3,60px);
+       width: 100%;
+       gap: 10px;
+       
+    }
+    .cell{
+        border: 2px solid #2a2343;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 22px;
+        transition:  0.3s background;
+
+    }
+        
+    }
+
+</style>
+<body>
+    <main class="min-vh-100 d-flex justify-content-center align-items-center" style="background-color: #0a0519;color: white;flex-direction: column;">
+        <div class=" w-25bg-black d-flex justify-content-center align-items-center">
+            <div class="card text-white w-100" style="background-color: #0a0519;">
+                <div class="card-body ">
+                   
+                    
+                    
+                    <header id="header " class="w-100 d-flex justify-content-between mb-3">
+                        <div class="player btn w-25 player-active d-flex align-items-center justify-content-center fs-3 " id="xPlayDisplay" style="background-color: #17122a;width: 3rem;font-weight: bold;border-radius: 12px;"
+                        onclick="choospPlayer('x')">
+                            x
+                        </div>
+                        <h3 id="titre">Choisir</h3>
+                        <div class="player btn w-25 d-flex  player-active justify-content-center align-items-center  fs-3" id="oPlayDisplay" style="background-color: #17122a;width: 3rem;font-weight: bold;border-radius: 12px;"
+                        onclick="choospPlayer('o')">
+                            O
+                        </div>
+
+                    </header>
+                    <div class="d-grid" id="board" >
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+
+                    </div>
+                    <button class="btn w-100 text-white mt-3" id="restartbtn" >
+                        recommencer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
